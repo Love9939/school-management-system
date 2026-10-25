@@ -105,23 +105,23 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
-            <ShieldCheck className="w-6 h-6 text-indigo-400" />
+            <ShieldCheck className="w-6 h-6 text-[#e60023]" />
             CBSE & Statutory Compliance Engine
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#62625b]">
             Eliminates portal fatigue with 1-click UDISE+ SDMIS exports, APAAR One-Nation-One-ID demographics, and Class 9-12 Board LOC pre-validation.
           </p>
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex items-center p-1 rounded-xl bg-slate-900/80 border border-white/10 text-xs">
+        <div className="flex items-center p-1 rounded-xl bg-[#f6f6f3] border border-[#dadad3] text-xs">
           <button
             id="tab-loc-btn"
             onClick={() => setActiveTab('loc')}
             className={`px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
               activeTab === 'loc'
-                ? 'bg-indigo-600 text-white shadow'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#e60023] text-white shadow'
+                : 'text-[#62625b] hover:text-[#000000]'
             }`}
           >
             Board LOC Pre-Validator
@@ -131,8 +131,8 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
             onClick={() => setActiveTab('apaar')}
             className={`px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
               activeTab === 'apaar'
-                ? 'bg-indigo-600 text-white shadow'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#e60023] text-white shadow'
+                : 'text-[#62625b] hover:text-[#000000]'
             }`}
           >
             APAAR & DigiLocker
@@ -142,8 +142,8 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
             onClick={() => setActiveTab('udise')}
             className={`px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
               activeTab === 'udise'
-                ? 'bg-indigo-600 text-white shadow'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#e60023] text-white shadow'
+                : 'text-[#62625b] hover:text-[#000000]'
             }`}
           >
             UDISE+ 1-Click Export
@@ -162,7 +162,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                   <AlertTriangle className="w-4 h-4 text-amber-400" />
                   CBSE Class 10 & 12 Board LOC (List of Candidates) Pre-Audit
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-[#62625b]">
                   Pre-validates against CBSE Examination Bylaws (Rule 13.2 mandatory 75% attendance threshold & 5-subject combination baskets) prior to final Pariksha Sangam upload.
                 </p>
               </div>
@@ -173,7 +173,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-slate-900/60 text-slate-400 uppercase text-[10px] font-mono border-b border-white/5">
+                <thead className="bg-[#f6f6f3]/60 text-[#62625b] uppercase text-[10px] font-mono border-b border-[#dadad3]">
                   <tr>
                     <th className="py-2.5 px-4">Candidate & Class</th>
                     <th className="py-2.5 px-4">Subject Basket</th>
@@ -189,7 +189,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                       
                       <td className="py-3 px-4">
                         <div className="font-bold text-white">{cand.studentName}</div>
-                        <div className="text-[11px] text-slate-400 font-mono">
+                        <div className="text-[11px] text-[#62625b] font-mono">
                           Class {cand.className} {cand.stream ? `(${cand.stream})` : ''} • Roll: {cand.rollNo}
                         </div>
                       </td>
@@ -202,7 +202,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                               className={`text-[10px] font-mono px-1.5 py-0.5 rounded ${
                                 sub.isSkillSubject 
                                   ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' 
-                                  : 'bg-slate-800 text-slate-300'
+                                  : 'bg-[#e5e5e0] text-[#33332e]'
                               }`}
                             >
                               {sub.code}: {sub.name}
@@ -215,7 +215,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                         <div className="flex items-center gap-1.5">
                           <span
                             className={`font-mono font-bold text-xs ${
-                              cand.attendancePercent < 75 ? 'text-rose-400' : 'text-emerald-400'
+                              cand.attendancePercent < 75 ? 'text-rose-400' : 'text-[#103c25]'
                             }`}
                           >
                             {cand.attendancePercent}%
@@ -232,7 +232,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                         <span
                           className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                             cand.aadhaarStatus === 'VERIFIED'
-                              ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                              ? 'bg-emerald-500/10 text-[#103c25] border-emerald-500/20'
                               : cand.aadhaarStatus === 'MISMATCH_DOB'
                               ? 'bg-rose-500/10 text-rose-300 border-rose-500/30'
                               : 'bg-amber-500/10 text-amber-300 border-amber-500/20'
@@ -244,7 +244,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
 
                       <td className="py-3 px-4">
                         {cand.locReady ? (
-                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400">
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#103c25]">
                             <CheckCircle2 className="w-3.5 h-3.5" />
                             LOC Eligible
                           </span>
@@ -254,7 +254,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                               <AlertTriangle className="w-3.5 h-3.5" />
                               Action Required
                             </span>
-                            <div className="text-[10px] text-slate-400 mt-0.5 line-clamp-1">
+                            <div className="text-[10px] text-[#62625b] mt-0.5 line-clamp-1">
                               {cand.validationErrors[0]}
                             </div>
                           </div>
@@ -265,7 +265,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                         {cand.locReady ? (
                           <button
                             disabled
-                            className="px-2.5 py-1 rounded bg-slate-800 text-slate-500 text-[11px]"
+                            className="px-2.5 py-1 rounded bg-[#e5e5e0] text-[#91918c] text-[11px]"
                           >
                             Verified
                           </button>
@@ -292,8 +292,8 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
           {/* Condonation Letter Modal */}
           {condonationLetterStudent && (
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-              <div className="glass-card rounded-3xl max-w-xl w-full p-6 border border-white/20 shadow-2xl space-y-4">
-                <div className="flex items-center justify-between pb-2 border-b border-white/10">
+              <div className="glass-card rounded-3xl max-w-xl w-full p-6 border border-[#dadad3] shadow-2xl space-y-4">
+                <div className="flex items-center justify-between pb-2 border-b border-[#dadad3]">
                   <div className="flex items-center gap-2">
                     <div className="p-2 rounded-lg bg-rose-500/20 text-rose-400">
                       <AlertTriangle className="w-5 h-5" />
@@ -302,30 +302,30 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                       <h4 className="text-sm font-bold text-white">
                         CBSE Rule 13.2 Attendance Condonation Generator
                       </h4>
-                      <p className="text-[11px] text-slate-400">
+                      <p className="text-[11px] text-[#62625b]">
                         {condonationLetterStudent.studentName} ({condonationLetterStudent.className}th - {condonationLetterStudent.attendancePercent}% Attendance)
                       </p>
                     </div>
                   </div>
                   <button 
                     onClick={() => setCondonationLetterStudent(null)}
-                    className="text-slate-400 hover:text-white"
+                    className="text-[#62625b] hover:text-[#000000]"
                   >
                     ✕
                   </button>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-900 border border-white/10 text-xs text-slate-300 font-sans space-y-2">
+                <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] text-xs text-[#33332e] font-sans space-y-2">
                   <p className="font-bold text-white uppercase text-[11px]">
                     To: The Regional Officer, Central Board of Secondary Education (CBSE), Delhi Region
                   </p>
                   <p>
                     <strong>Subject:</strong> Request for Condonation of Attendance Shortage under Rule 13.2 of Examination Bylaws for Candidate <strong>{condonationLetterStudent.studentName}</strong> (Roll #{condonationLetterStudent.rollNo}).
                   </p>
-                  <p className="text-[11px] text-slate-400 leading-relaxed">
+                  <p className="text-[11px] text-[#62625b] leading-relaxed">
                     Respected Sir/Madam, the candidate suffered from severe acute dengue with hospitalization from 04-Sep-2025 to 28-Sep-2025. Medical treatment fitness certificates countersigned by the Chief Medical Officer / Civil Surgeon are attached herewith. The candidate has covered all academic syllabi through remedial classes and achieved 84% in Pre-Board examinations.
                   </p>
-                  <div className="p-2 rounded bg-emerald-950/30 border border-emerald-500/30 text-[10px] text-emerald-300 font-mono">
+                  <div className="p-2 rounded bg-[#c7f0da]/30 border border-emerald-500/30 text-[10px] text-emerald-300 font-mono">
                     ✓ CMO Medical Certificate Attached • ✓ Pre-Board Report Card Validated • ✓ Guardian Undertaking Signed
                   </div>
                 </div>
@@ -333,7 +333,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                 <div className="flex items-center justify-between gap-3 pt-2">
                   <button
                     onClick={() => setCondonationLetterStudent(null)}
-                    className="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 text-xs font-semibold"
+                    className="px-4 py-2 rounded-xl bg-[#e5e5e0] text-[#33332e] text-xs font-semibold"
                   >
                     Close
                   </button>
@@ -361,10 +361,10 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
               <div>
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <Fingerprint className="w-5 h-5 text-indigo-400" />
+                  <Fingerprint className="w-5 h-5 text-[#e60023]" />
                   APAAR ("One Nation, One Student ID") & DigiLocker Gateway
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-[#62625b]">
                   Pre-verifies Aadhaar demographics before requesting 12-digit APAAR generation under National Credit Framework (NCrF).
                 </p>
               </div>
@@ -373,7 +373,7 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                   confetti({ particleCount: 40, spread: 50 });
                   alert('Batch APAAR sync initiated with Ministry of Education API. 45 new IDs generated.');
                 }}
-                className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all flex items-center gap-1.5"
+                className="px-3.5 py-2 rounded-xl bg-[#e60023] hover:bg-indigo-500 text-white text-xs font-bold transition-all flex items-center gap-1.5"
               >
                 <Sparkles className="w-3.5 h-3.5 text-amber-300" />
                 <span>Run Batch APAAR Sync</span>
@@ -382,27 +382,27 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
 
             {/* Demographic Match Breakdown */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5">
-                <div className="text-xs text-slate-400">Parental Digital Consent</div>
-                <div className="text-2xl font-black text-emerald-400 mt-1">94.2%</div>
-                <p className="text-[11px] text-slate-400 mt-1">1,733 of 1,840 consented via SMS/Portal OTP</p>
+              <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3]">
+                <div className="text-xs text-[#62625b]">Parental Digital Consent</div>
+                <div className="text-2xl font-black text-[#103c25] mt-1">94.2%</div>
+                <p className="text-[11px] text-[#62625b] mt-1">1,733 of 1,840 consented via SMS/Portal OTP</p>
               </div>
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5">
-                <div className="text-xs text-slate-400">Aadhaar Demographics Synced</div>
-                <div className="text-2xl font-black text-indigo-400 mt-1">1,815</div>
-                <p className="text-[11px] text-slate-400 mt-1">Name, DOB, Gender scored with UIDAI</p>
+              <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3]">
+                <div className="text-xs text-[#62625b]">Aadhaar Demographics Synced</div>
+                <div className="text-2xl font-black text-[#e60023] mt-1">1,815</div>
+                <p className="text-[11px] text-[#62625b] mt-1">Name, DOB, Gender scored with UIDAI</p>
               </div>
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5">
-                <div className="text-xs text-slate-400">Mismatches / Action Needed</div>
+              <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3]">
+                <div className="text-xs text-[#62625b]">Mismatches / Action Needed</div>
                 <div className="text-2xl font-black text-rose-400 mt-1">25</div>
-                <p className="text-[11px] text-slate-400 mt-1">Spelling discrepancies or DOB variances</p>
+                <p className="text-[11px] text-[#62625b] mt-1">Spelling discrepancies or DOB variances</p>
               </div>
             </div>
 
             {/* Sample Demographics Table */}
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-slate-900/60 text-slate-400 uppercase text-[10px] font-mono border-b border-white/5">
+                <thead className="bg-[#f6f6f3]/60 text-[#62625b] uppercase text-[10px] font-mono border-b border-[#dadad3]">
                   <tr>
                     <th className="py-2.5 px-4">Student</th>
                     <th className="py-2.5 px-4">School vs Aadhaar Record</th>
@@ -416,15 +416,15 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                     <tr key={std.id} className="hover:bg-white/[0.02]">
                       <td className="py-3 px-4">
                         <div className="font-bold text-white">{std.schoolName}</div>
-                        <div className="text-[11px] text-slate-400 font-mono">{std.currentClass}-{std.section} • {std.admissionNumber}</div>
+                        <div className="text-[11px] text-[#62625b] font-mono">{std.currentClass}-{std.section} • {std.admissionNumber}</div>
                       </td>
                       <td className="py-3 px-4 text-[11px]">
-                        <div>School: <strong className="text-slate-200">{std.schoolName}</strong> (DOB: {std.schoolDob})</div>
-                        <div className="text-slate-400">Aadhaar: <strong className="text-slate-300">{std.aadhaarName}</strong> (DOB: {std.aadhaarDob})</div>
+                        <div>School: <strong className="text-[#211922]">{std.schoolName}</strong> (DOB: {std.schoolDob})</div>
+                        <div className="text-[#62625b]">Aadhaar: <strong className="text-[#33332e]">{std.aadhaarName}</strong> (DOB: {std.aadhaarDob})</div>
                       </td>
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-1.5 font-mono font-bold">
-                          <span className={std.demographicMatchScore === 100 ? 'text-emerald-400' : 'text-rose-400'}>
+                          <span className={std.demographicMatchScore === 100 ? 'text-[#103c25]' : 'text-rose-400'}>
                             {std.demographicMatchScore}%
                           </span>
                         </div>
@@ -433,14 +433,14 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                         {std.apaarId ? (
                           <span className="text-indigo-300">{std.apaarId}</span>
                         ) : (
-                          <span className="text-slate-500">—</span>
+                          <span className="text-[#91918c]">—</span>
                         )}
                       </td>
                       <td className="py-3 px-4">
                         <span
                           className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                             std.apaarConsentStatus === 'CONSENT_GRANTED'
-                              ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                              ? 'bg-emerald-500/10 text-[#103c25] border-emerald-500/20'
                               : 'bg-rose-500/10 text-rose-300 border-rose-500/30'
                           }`}
                         >
@@ -464,10 +464,10 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
               <div>
                 <h3 className="text-base font-bold text-white flex items-center gap-2">
-                  <FileCode className="w-5 h-5 text-emerald-400" />
+                  <FileCode className="w-5 h-5 text-[#103c25]" />
                   UDISE+ Ministry of Education 1-Click SDMIS Export Engine
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-[#62625b]">
                   Validates Student, Staff, and Physical Infrastructure Data Capture Format (DCF) according to 2025-26 portal specs.
                 </p>
               </div>
@@ -482,20 +482,20 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
             </div>
 
             {downloadSuccess && (
-              <div className="p-3 mb-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-200 text-xs font-semibold flex items-center gap-2 animate-fade-in">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <div className="p-3 mb-4 rounded-xl bg-[#c7f0da] border border-[#a3e6c2] text-[#103c25] text-xs font-semibold flex items-center gap-2 animate-fade-in">
+                <CheckCircle2 className="w-4 h-4 text-[#103c25]" />
                 <span>Export generated successfully! Downloaded UDISE+ JSON ready for direct upload to udiseplus.gov.in</span>
               </div>
             )}
 
             {/* Validation Checkpoints */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-2">
+              <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-2">
                 <h4 className="text-xs font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <CheckCircle2 className="w-4 h-4 text-[#103c25]" />
                   Student SDMIS Master (1,840 Records)
                 </h4>
-                <ul className="text-[11px] text-slate-400 space-y-1">
+                <ul className="text-[11px] text-[#62625b] space-y-1">
                   <li>• PEN (Permanent Education Number) mapped: 100%</li>
                   <li>• RTE 25% Section 12(1)(c) Quota verified: 82 Students</li>
                   <li>• Category (GEN/OBC/SC/ST/EWS) verification: Complete</li>
@@ -503,12 +503,12 @@ export const CbseComplianceView: React.FC<CbseComplianceViewProps> = ({
                 </ul>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-2">
+              <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-2">
                 <h4 className="text-xs font-bold text-white flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <CheckCircle2 className="w-4 h-4 text-[#103c25]" />
                   Staff DCF & Infrastructure Metrics
                 </h4>
-                <ul className="text-[11px] text-slate-400 space-y-1">
+                <ul className="text-[11px] text-[#62625b] space-y-1">
                   <li>• 68 Teaching Staff Teacher IDs & Qualifications aligned</li>
                   <li>• Fire Safety NOC & Building Safety Certificate validity logged</li>
                   <li>• AIS-140 GPS Bus Fleet details embedded</li>

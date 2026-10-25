@@ -151,10 +151,10 @@ export const ApiMicroservicesView: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
-            <Server className="w-6 h-6 text-indigo-400" />
+            <Server className="w-6 h-6 text-[#e60023]" />
             API & Microservices Architecture Simulator
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#62625b]">
             Interactive playground for real-time webhooks (Payment Gateway Split Settlement, 7:30 AM Biometrics, and Offline-First Sync).
           </p>
         </div>
@@ -164,50 +164,50 @@ export const ApiMicroservicesView: React.FC = () => {
             href="/api/v1/openapi"
             target="_blank"
             rel="noreferrer"
-            className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-bold border border-white/10 flex items-center gap-1.5 transition-all"
+            className="px-3.5 py-2 rounded-xl bg-[#e5e5e0] hover:bg-[#c8c8c1] text-[#211922] text-xs font-mono font-bold border border-[#dadad3] flex items-center gap-1.5 transition-all"
           >
-            <FileCode className="w-4 h-4 text-indigo-400" />
+            <FileCode className="w-4 h-4 text-[#e60023]" />
             <span>OpenAPI 3.1 Spec (JSON)</span>
           </a>
         </div>
       </div>
 
       {/* Architecture Visualizer Flow */}
-      <div className="glass-card rounded-2xl p-6 border border-white/10">
+      <div className="glass-card rounded-2xl p-6 border border-[#dadad3]">
         <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2">
           <Layers className="w-4 h-4 text-purple-400" />
           Event-Driven Microservices Architecture
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs font-mono">
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-1">
-            <div className="text-[10px] uppercase text-indigo-400 font-bold">1. Ingress & Gateways</div>
+          <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-1">
+            <div className="text-[10px] uppercase text-[#e60023] font-bold">1. Ingress & Gateways</div>
             <div className="font-bold text-white">Payment & Hardware</div>
-            <p className="text-[11px] text-slate-400 font-sans">
+            <p className="text-[11px] text-[#62625b] font-sans">
               Razorpay/ICICI webhooks, eSSL biometric punches, AIS-140 GPS pings via HTTPS.
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-1">
-            <div className="text-[10px] uppercase text-emerald-400 font-bold">2. Split Engine & Logic</div>
+          <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-1">
+            <div className="text-[10px] uppercase text-[#103c25] font-bold">2. Split Engine & Logic</div>
             <div className="font-bold text-white">Double-Entry Ledger</div>
-            <p className="text-[11px] text-slate-400 font-sans">
+            <p className="text-[11px] text-[#62625b] font-sans">
               Segregates Trust (82%) vs Fleet (18%) collections with atomic triggers.
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-1">
+          <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-1">
             <div className="text-[10px] uppercase text-amber-400 font-bold">3. Worker Queue</div>
             <div className="font-bold text-white">Redis & BullMQ</div>
-            <p className="text-[11px] text-slate-400 font-sans">
+            <p className="text-[11px] text-[#62625b] font-sans">
               Asynchronous worker pool rendering thousands of CBSE report cards and Tally Prime sync XMLs.
             </p>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-1">
+          <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-1">
             <div className="text-[10px] uppercase text-cyan-400 font-bold">4. Egress & Notifiers</div>
             <div className="font-bold text-white">WhatsApp & Smartboard</div>
-            <p className="text-[11px] text-slate-400 font-sans">
+            <p className="text-[11px] text-[#62625b] font-sans">
               1-Tap UPI messages, classroom display broadcasts, and UDISE+ government batch export.
             </p>
           </div>
@@ -218,13 +218,13 @@ export const ApiMicroservicesView: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Left: Request Dispatcher */}
-        <div className="glass-card rounded-2xl p-5 border border-white/10 space-y-4">
+        <div className="glass-card rounded-2xl p-5 border border-[#dadad3] space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              <Terminal className="w-4 h-4 text-emerald-400" />
+              <Terminal className="w-4 h-4 text-[#103c25]" />
               Live Webhook Dispatcher
             </h3>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-[#103c25] border border-emerald-500/20">
               POST /api/v1
             </span>
           </div>
@@ -236,8 +236,8 @@ export const ApiMicroservicesView: React.FC = () => {
               onClick={() => { setSelectedEndpoint('payment'); setResponseJson(null); }}
               className={`p-2.5 rounded-xl font-semibold text-left flex items-center gap-2 transition-all ${
                 selectedEndpoint === 'payment'
-                  ? 'bg-indigo-600 text-white shadow ring-1 ring-indigo-400'
-                  : 'bg-slate-900 text-slate-400 hover:text-white'
+                  ? 'bg-[#e60023] text-white shadow ring-1 ring-indigo-400'
+                  : 'bg-[#f6f6f3] text-[#62625b] hover:text-[#000000]'
               }`}
             >
               <IndianRupee className="w-4 h-4" />
@@ -249,8 +249,8 @@ export const ApiMicroservicesView: React.FC = () => {
               onClick={() => { setSelectedEndpoint('biometric'); setResponseJson(null); }}
               className={`p-2.5 rounded-xl font-semibold text-left flex items-center gap-2 transition-all ${
                 selectedEndpoint === 'biometric'
-                  ? 'bg-indigo-600 text-white shadow ring-1 ring-indigo-400'
-                  : 'bg-slate-900 text-slate-400 hover:text-white'
+                  ? 'bg-[#e60023] text-white shadow ring-1 ring-indigo-400'
+                  : 'bg-[#f6f6f3] text-[#62625b] hover:text-[#000000]'
               }`}
             >
               <Clock className="w-4 h-4" />
@@ -262,8 +262,8 @@ export const ApiMicroservicesView: React.FC = () => {
               onClick={() => { setSelectedEndpoint('offline'); setResponseJson(null); }}
               className={`p-2.5 rounded-xl font-semibold text-left flex items-center gap-2 transition-all ${
                 selectedEndpoint === 'offline'
-                  ? 'bg-indigo-600 text-white shadow ring-1 ring-indigo-400'
-                  : 'bg-slate-900 text-slate-400 hover:text-white'
+                  ? 'bg-[#e60023] text-white shadow ring-1 ring-indigo-400'
+                  : 'bg-[#f6f6f3] text-[#62625b] hover:text-[#000000]'
               }`}
             >
               <WifiOff className="w-4 h-4" />
@@ -275,8 +275,8 @@ export const ApiMicroservicesView: React.FC = () => {
               onClick={() => { setSelectedEndpoint('voice-rubric'); setResponseJson(null); }}
               className={`p-2.5 rounded-xl font-semibold text-left flex items-center gap-2 transition-all ${
                 selectedEndpoint === 'voice-rubric'
-                  ? 'bg-indigo-600 text-white shadow ring-1 ring-indigo-400'
-                  : 'bg-slate-900 text-slate-400 hover:text-white'
+                  ? 'bg-[#e60023] text-white shadow ring-1 ring-indigo-400'
+                  : 'bg-[#f6f6f3] text-[#62625b] hover:text-[#000000]'
               }`}
             >
               <Sparkles className="w-4 h-4" />
@@ -286,17 +286,17 @@ export const ApiMicroservicesView: React.FC = () => {
 
           {/* Request Payload Preview */}
           <div className="space-y-1.5">
-            <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono">
+            <div className="flex items-center justify-between text-[11px] text-[#62625b] font-mono">
               <span>Endpoint: <strong className="text-white">{endpointUrls[selectedEndpoint]}</strong></span>
               <button
                 onClick={handleCopyCurl}
-                className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1"
+                className="text-[#e60023] hover:text-indigo-300 flex items-center gap-1"
               >
-                {copiedCurl ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                {copiedCurl ? <Check className="w-3 h-3 text-[#103c25]" /> : <Copy className="w-3 h-3" />}
                 <span>{copiedCurl ? 'cURL Copied' : 'Copy cURL'}</span>
               </button>
             </div>
-            <pre className="p-3.5 rounded-xl bg-slate-950 border border-white/5 text-[11px] font-mono text-indigo-200 overflow-x-auto max-h-56">
+            <pre className="p-3.5 rounded-xl bg-[#f6f6f3] border border-[#dadad3] text-[11px] font-mono text-indigo-200 overflow-x-auto max-h-56">
               {JSON.stringify(payloads[selectedEndpoint], null, 2)}
             </pre>
           </div>
@@ -313,14 +313,14 @@ export const ApiMicroservicesView: React.FC = () => {
         </div>
 
         {/* Right: Live Server Response */}
-        <div className="glass-card rounded-2xl p-5 border border-white/10 space-y-4 flex flex-col">
+        <div className="glass-card rounded-2xl p-5 border border-[#dadad3] space-y-4 flex flex-col">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
               <Code2 className="w-4 h-4 text-cyan-400" />
               Live Server Response
             </h3>
             {responseJson && (
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-[#103c25] border border-emerald-500/20">
                 HTTP 200 OK
               </span>
             )}
@@ -328,12 +328,12 @@ export const ApiMicroservicesView: React.FC = () => {
 
           {responseJson ? (
             <div className="flex-1 space-y-3">
-              <pre className="p-3.5 rounded-xl bg-slate-950 border border-emerald-500/30 text-[11px] font-mono text-emerald-300 overflow-x-auto max-h-80 shadow-inner">
+              <pre className="p-3.5 rounded-xl bg-[#f6f6f3] border border-emerald-500/30 text-[11px] font-mono text-emerald-300 overflow-x-auto max-h-80 shadow-inner">
                 {JSON.stringify(responseJson, null, 2)}
               </pre>
 
               {/* Explanatory Callout */}
-              <div className="p-3 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-slate-300">
+              <div className="p-3 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-[#33332e]">
                 <span className="font-bold text-indigo-300 block mb-0.5">Automated Event Lifecycle:</span>
                 {selectedEndpoint === 'payment' && (
                   <span>
@@ -358,10 +358,10 @@ export const ApiMicroservicesView: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="flex-1 flex flex-col items-center justify-center p-8 text-center text-slate-500 space-y-2 border border-dashed border-white/10 rounded-xl">
-              <Server className="w-8 h-8 text-slate-600" />
+            <div className="flex-1 flex flex-col items-center justify-center p-8 text-center text-[#91918c] space-y-2 border border-dashed border-[#dadad3] rounded-xl">
+              <Server className="w-8 h-8 text-[#dadad3]" />
               <div className="text-xs">No request sent yet</div>
-              <p className="text-[11px] text-slate-500 max-w-xs">
+              <p className="text-[11px] text-[#91918c] max-w-xs">
                 Click "Dispatch Live Webhook" to execute an actual HTTP request against the Next.js App Router API route.
               </p>
             </div>

@@ -111,12 +111,12 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
       
       {/* Success Notification Bar */}
       {paymentSuccessMessage && (
-        <div className="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-200 text-xs font-semibold flex items-center justify-between animate-fade-in shadow-lg">
+        <div className="p-4 rounded-xl bg-[#c7f0da] border border-[#a3e6c2] text-[#103c25] text-xs font-semibold flex items-center justify-between animate-fade-in shadow-lg">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+            <CheckCircle2 className="w-5 h-5 text-[#103c25]" />
             <span>{paymentSuccessMessage}</span>
           </div>
-          <span className="text-[10px] font-mono uppercase bg-emerald-500/30 px-2 py-0.5 rounded">Tally Prime Synced</span>
+          <span className="text-[10px] font-mono uppercase bg-[#c7f0da] px-2 py-0.5 rounded">Tally Prime Synced</span>
         </div>
       )}
 
@@ -124,23 +124,23 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-black text-white flex items-center gap-2">
-            <IndianRupee className="w-6 h-6 text-emerald-400" />
+            <IndianRupee className="w-6 h-6 text-[#103c25]" />
             Double-Entry Fee Engine & 1-Tap Recovery
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#62625b]">
             Eliminates fee leakage with immutable double-entry journal vouchers, WhatsApp dynamic UPI links, and automated split settlements.
           </p>
         </div>
 
         {/* Subtabs Switcher */}
-        <div className="flex items-center p-1 rounded-xl bg-slate-900/80 border border-white/10 text-xs">
+        <div className="flex items-center p-1 rounded-xl bg-[#f6f6f3] border border-[#dadad3] text-xs">
           <button
             id="subtab-defaulters-btn"
             onClick={() => setActiveSubTab('defaulters')}
             className={`px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
               activeSubTab === 'defaulters'
-                ? 'bg-indigo-600 text-white shadow'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#e60023] text-white shadow'
+                : 'text-[#62625b] hover:text-[#000000]'
             }`}
           >
             Smart Defaulters ({defaulters.filter((d) => d.status === 'PENDING').length})
@@ -150,8 +150,8 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
             onClick={() => setActiveSubTab('ledger')}
             className={`px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
               activeSubTab === 'ledger'
-                ? 'bg-indigo-600 text-white shadow'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#e60023] text-white shadow'
+                : 'text-[#62625b] hover:text-[#000000]'
             }`}
           >
             Double-Entry Ledger & Tally
@@ -161,8 +161,8 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
             onClick={() => setActiveSubTab('maker-checker')}
             className={`px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
               activeSubTab === 'maker-checker'
-                ? 'bg-indigo-600 text-white shadow'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#e60023] text-white shadow'
+                : 'text-[#62625b] hover:text-[#000000]'
             }`}
           >
             Maker-Checker (1)
@@ -176,17 +176,17 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
           
           {/* Defaulter Table Card */}
           <div className="glass-card rounded-2xl overflow-hidden">
-            <div className="p-4 border-b border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-4 border-b border-[#dadad3] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h3 className="text-sm font-bold text-white">
                   Active Q3 Defaulters Ledger (Tiered Escalation Engine)
                 </h3>
-                <p className="text-[11px] text-slate-400">
+                <p className="text-[11px] text-[#62625b]">
                   Late fines calculate automatically. Click "1-Tap WhatsApp" to generate dynamic payment link.
                 </p>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono text-slate-400">
+                <span className="text-[11px] font-mono text-[#62625b]">
                   Total Pending: <strong className="text-rose-400">{formatINR(defaulters.reduce((acc, d) => acc + (d.status === 'PENDING' ? d.totalDue + d.lateFine : 0), 0))}</strong>
                 </span>
               </div>
@@ -194,7 +194,7 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-slate-900/60 text-slate-400 uppercase text-[10px] font-mono border-b border-white/5">
+                <thead className="bg-[#f6f6f3]/60 text-[#62625b] uppercase text-[10px] font-mono border-b border-[#dadad3]">
                   <tr>
                     <th className="py-3 px-4">Student & Class</th>
                     <th className="py-3 px-4">Parent Details</th>
@@ -214,27 +214,27 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                         {/* Student */}
                         <td className="py-3.5 px-4">
                           <div className="font-bold text-white">{record.studentName}</div>
-                          <div className="text-[11px] text-slate-400 font-mono">
+                          <div className="text-[11px] text-[#62625b] font-mono">
                             {record.className}-{record.section} • {record.admissionNo}
                           </div>
                         </td>
 
                         {/* Parent */}
                         <td className="py-3.5 px-4">
-                          <div className="text-slate-300 font-medium">{record.parentName}</div>
-                          <div className="text-[11px] text-slate-400 font-mono">{record.parentPhone}</div>
+                          <div className="text-[#33332e] font-medium">{record.parentName}</div>
+                          <div className="text-[11px] text-[#62625b] font-mono">{record.parentPhone}</div>
                         </td>
 
                         {/* Dues Breakdown */}
                         <td className="py-3.5 px-4 font-mono">
                           {isPaid ? (
-                            <span className="text-emerald-400 font-bold">₹0 (Paid in Full)</span>
+                            <span className="text-[#103c25] font-bold">₹0 (Paid in Full)</span>
                           ) : (
                             <div>
                               <div className="font-bold text-rose-300">
                                 {formatINR(record.totalDue + record.lateFine)}
                               </div>
-                              <div className="text-[10px] text-slate-400">
+                              <div className="text-[10px] text-[#62625b]">
                                 Tuition {formatINR(record.tuitionFeeDue)} | Transport {formatINR(record.transportFeeDue)}
                                 {record.lateFine > 0 && <span className="text-amber-400"> + Fine {formatINR(record.lateFine)}</span>}
                               </div>
@@ -245,11 +245,11 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                         {/* Overdue */}
                         <td className="py-3.5 px-4">
                           {isPaid ? (
-                            <span className="text-slate-500">—</span>
+                            <span className="text-[#91918c]">—</span>
                           ) : (
                             <div>
                               <span className="font-bold text-rose-400">{record.daysOverdue} Days</span>
-                              <div className="text-[10px] text-slate-400">Since Oct 10</div>
+                              <div className="text-[10px] text-[#62625b]">Since Oct 10</div>
                             </div>
                           )}
                         </td>
@@ -257,7 +257,7 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                         {/* Escalation Tier */}
                         <td className="py-3.5 px-4">
                           {isPaid ? (
-                            <span className="text-emerald-400 text-[11px] font-semibold">Cleared</span>
+                            <span className="text-[#103c25] text-[11px] font-semibold">Cleared</span>
                           ) : (
                             <span
                               className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
@@ -267,7 +267,7 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                                   ? 'bg-amber-500/20 text-amber-300 border-amber-500/30'
                                   : record.escalationTier === 'REMINDER_2'
                                   ? 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30'
-                                  : 'bg-slate-700/40 text-slate-300 border-slate-600/30'
+                                  : 'bg-[#c8c8c1]/40 text-[#33332e] border-slate-600/30'
                               }`}
                             >
                               {record.escalationTier.replace('_', ' ')}
@@ -278,7 +278,7 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                         {/* Status */}
                         <td className="py-3.5 px-4">
                           {isPaid ? (
-                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400">
+                            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#103c25]">
                               <CheckCircle2 className="w-3.5 h-3.5" />
                               PAID (T+1)
                             </span>
@@ -297,7 +297,7 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                           {isPaid ? (
                             <button
                               disabled
-                              className="px-3 py-1.5 rounded-lg bg-white/5 text-slate-500 text-[11px] cursor-not-allowed"
+                              className="px-3 py-1.5 rounded-lg bg-[#f6f6f3] text-[#91918c] text-[11px] cursor-not-allowed"
                             >
                               Receipt Generated
                             </button>
@@ -309,13 +309,13 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                                 className="px-2.5 py-1.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-emerald-300 font-semibold text-[11px] transition-all flex items-center gap-1"
                                 title="Send WhatsApp Payment Link"
                               >
-                                <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                                <MessageCircle className="w-3.5 h-3.5 text-[#103c25]" />
                                 <span>1-Tap WhatsApp</span>
                               </button>
                               <button
                                 id={`pay-btn-${record.id}`}
                                 onClick={() => handleSimulatePayment(record)}
-                                className="px-2.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-[11px] transition-all flex items-center gap-1"
+                                className="px-2.5 py-1.5 rounded-lg bg-[#e60023] hover:bg-indigo-500 text-white font-semibold text-[11px] transition-all flex items-center gap-1"
                                 title="Simulate Immediate UPI Payment"
                               >
                                 <Sparkles className="w-3 h-3 text-amber-300" />
@@ -335,19 +335,19 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
           </div>
 
           {/* Explanation Callout */}
-          <div className="glass-card rounded-2xl p-4 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+          <div className="glass-card rounded-2xl p-4 border border-[#dadad3] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#33332e]">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+              <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-[#e60023] flex items-center justify-center font-bold">
                 UPI
               </div>
               <div>
                 <span className="font-bold text-white">How WhatsApp 1-Tap Recovery Works:</span>
-                <span className="text-slate-400 block text-[11px]">
+                <span className="text-[#62625b] block text-[11px]">
                   Encodes student ID + quarter into dynamic NPCI UPI URI. When parent clicks in WhatsApp, it opens GPay / PhonePe / Paytm with exact amount pre-filled. Bank webhook completes T+1 auto-reconciliation.
                 </span>
               </div>
             </div>
-            <div className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20 whitespace-nowrap">
+            <div className="text-[11px] font-mono text-[#103c25] bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20 whitespace-nowrap">
               Zero Login Friction • 4x Faster Recovery
             </div>
           </div>
@@ -365,18 +365,18 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                   <FileSpreadsheet className="w-4 h-4 text-amber-400" />
                   Immutable Double-Entry Ledger Journal (Tally Prime Integrated)
                 </h3>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-[#62625b]">
                   Every transaction generates balanced Debits and Credits with cryptographic audit hashes.
                 </p>
               </div>
-              <span className="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20">
+              <span className="text-[11px] font-mono text-[#103c25] bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20">
                 Tally XML / ODBC Synced
               </span>
             </div>
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
-                <thead className="bg-slate-900/60 text-slate-400 uppercase text-[10px] font-mono border-b border-white/5">
+                <thead className="bg-[#f6f6f3]/60 text-[#62625b] uppercase text-[10px] font-mono border-b border-[#dadad3]">
                   <tr>
                     <th className="py-2.5 px-4">Receipt #</th>
                     <th className="py-2.5 px-4">Timestamp</th>
@@ -392,13 +392,13 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                   {transactions.map((tx) => (
                     <tr key={tx.id} className="hover:bg-white/[0.02]">
                       <td className="py-3 px-4 font-bold text-indigo-300">{tx.receiptNumber}</td>
-                      <td className="py-3 px-4 text-slate-400 text-[11px]">{tx.timestamp}</td>
+                      <td className="py-3 px-4 text-[#62625b] text-[11px]">{tx.timestamp}</td>
                       <td className="py-3 px-4 text-white font-sans">{tx.studentName}</td>
-                      <td className="py-3 px-4 text-slate-300 text-[11px]">
+                      <td className="py-3 px-4 text-[#33332e] text-[11px]">
                         <div>{tx.paymentMode}</div>
-                        <div className="text-[10px] text-slate-500">{tx.referenceNumber}</div>
+                        <div className="text-[10px] text-[#91918c]">{tx.referenceNumber}</div>
                       </td>
-                      <td className="py-3 px-4 text-right text-emerald-400 font-bold">
+                      <td className="py-3 px-4 text-right text-[#103c25] font-bold">
                         {formatINR(tx.trustAccountAmount)}
                       </td>
                       <td className="py-3 px-4 text-right text-cyan-400 font-bold">
@@ -408,7 +408,7 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                         {formatINR(tx.amount)}
                       </td>
                       <td className="py-3 px-4">
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/10 text-[#103c25] border border-emerald-500/20">
                           {tx.settlementStatus}
                         </span>
                       </td>
@@ -436,39 +436,39 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
               </span>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-3">
+            <div className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-3">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-2">
                 <div>
-                  <span className="text-slate-400">Applicant: </span>
+                  <span className="text-[#62625b]">Applicant: </span>
                   <strong className="text-white">Arjun Vardhan (Class 11 Commerce, Adm #DPA-2021-0677)</strong>
                 </div>
-                <div className="text-slate-400">
-                  Parent: <span className="text-slate-200">Ravi Vardhan (+91 98118 77654)</span>
+                <div className="text-[#62625b]">
+                  Parent: <span className="text-[#211922]">Ravi Vardhan (+91 98118 77654)</span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs border-y border-white/5 py-3">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs border-y border-[#dadad3] py-3">
                 <div>
-                  <span className="text-slate-400 block text-[11px]">Requested Concession:</span>
+                  <span className="text-[#62625b] block text-[11px]">Requested Concession:</span>
                   <span className="font-bold text-amber-300 text-sm">25% Sibling Concession</span>
                 </div>
                 <div>
-                  <span className="text-slate-400 block text-[11px]">Linked Sibling:</span>
+                  <span className="text-[#62625b] block text-[11px]">Linked Sibling:</span>
                   <span className="font-semibold text-white">Ananya Vardhan (Class 7-B)</span>
                 </div>
                 <div>
-                  <span className="text-slate-400 block text-[11px]">Proposed Net Adjustment:</span>
-                  <span className="font-bold text-emerald-400 text-sm">- ₹7,750 from Tuition Head</span>
+                  <span className="text-[#62625b] block text-[11px]">Proposed Net Adjustment:</span>
+                  <span className="font-bold text-[#103c25] text-sm">- ₹7,750 from Tuition Head</span>
                 </div>
               </div>
 
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-[#62625b]">
                 Staff note from Fee Clerk: Verified birth certificates and admission ledger. Eligible under Trust Sibling Policy Rule 4.
               </p>
 
               <div className="flex items-center justify-end gap-3 pt-2">
                 {makerCheckerApproved ? (
-                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-400 bg-emerald-500/10 px-4 py-2 rounded-xl border border-emerald-500/20">
+                  <div className="flex items-center gap-2 text-xs font-bold text-[#103c25] bg-emerald-500/10 px-4 py-2 rounded-xl border border-emerald-500/20">
                     <CheckCircle2 className="w-4 h-4" />
                     <span>Concession Approved & Cryptographically Signed by Director</span>
                   </div>
@@ -476,7 +476,7 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
                   <>
                     <button
                       onClick={() => alert('Concession rejected. Reason logged to audit trail.')}
-                      className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold"
+                      className="px-3.5 py-2 rounded-xl bg-[#e5e5e0] hover:bg-[#c8c8c1] text-[#33332e] text-xs font-semibold"
                     >
                       Reject Request
                     </button>
@@ -503,48 +503,48 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
       {/* WhatsApp Modal with UPI QR & Preview */}
       {whatsappModalOpen && selectedDefaulter && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in">
-          <div className="glass-card rounded-3xl max-w-lg w-full p-6 border border-white/20 shadow-2xl relative">
+          <div className="glass-card rounded-3xl max-w-lg w-full p-6 border border-[#dadad3] shadow-2xl relative">
             
-            <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+            <div className="flex items-center justify-between pb-3 border-b border-[#dadad3] mb-4">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#c7f0da] text-[#103c25] flex items-center justify-center">
                   <MessageCircle className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white">WhatsApp 1-Tap Payment Link</h4>
-                  <p className="text-[11px] text-slate-400">Direct NPCI UPI String Generator</p>
+                  <p className="text-[11px] text-[#62625b]">Direct NPCI UPI String Generator</p>
                 </div>
               </div>
               <button
                 onClick={() => setWhatsappModalOpen(false)}
-                className="text-slate-400 hover:text-white text-sm font-bold"
+                className="text-[#62625b] hover:text-[#000000] text-sm font-bold"
               >
                 ✕
               </button>
             </div>
 
             {/* Recipient Details */}
-            <div className="p-3.5 rounded-xl bg-slate-900/90 border border-white/5 space-y-1.5 text-xs mb-4">
+            <div className="p-3.5 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-1.5 text-xs mb-4">
               <div className="flex justify-between">
-                <span className="text-slate-400">Student:</span>
+                <span className="text-[#62625b]">Student:</span>
                 <span className="text-white font-bold">{selectedDefaulter.studentName} ({selectedDefaulter.className})</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Parent Phone:</span>
-                <span className="text-slate-200 font-mono">{selectedDefaulter.parentPhone}</span>
+                <span className="text-[#62625b]">Parent Phone:</span>
+                <span className="text-[#211922] font-mono">{selectedDefaulter.parentPhone}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-400">Total Dues (incl. late fine):</span>
+                <span className="text-[#62625b]">Total Dues (incl. late fine):</span>
                 <span className="text-rose-400 font-black">{formatINR(selectedDefaulter.totalDue + selectedDefaulter.lateFine)}</span>
               </div>
             </div>
 
             {/* WhatsApp Message Preview */}
             <div className="mb-4">
-              <span className="text-[10px] uppercase font-mono text-slate-400 block mb-1.5">
+              <span className="text-[10px] uppercase font-mono text-[#62625b] block mb-1.5">
                 Simulated WhatsApp Message Payload:
               </span>
-              <div className="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-xs text-slate-200 font-sans space-y-2">
+              <div className="p-3.5 rounded-xl bg-[#c7f0da]/30 border border-emerald-500/30 text-xs text-[#211922] font-sans space-y-2">
                 <p>
                   🙏 Namaste Shri {selectedDefaulter.parentName},
                 </p>
@@ -567,9 +567,9 @@ export const FeeManagementView: React.FC<FeeManagementViewProps> = ({
             <div className="flex items-center justify-between gap-3 pt-2">
               <button
                 onClick={() => handleCopyUpiLink(selectedDefaulter.upiLink)}
-                className="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all"
+                className="flex-1 py-2.5 rounded-xl bg-[#e5e5e0] hover:bg-[#c8c8c1] text-[#211922] text-xs font-semibold flex items-center justify-center gap-1.5 transition-all"
               >
-                {copiedLink ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                {copiedLink ? <Check className="w-4 h-4 text-[#103c25]" /> : <Copy className="w-4 h-4" />}
                 <span>{copiedLink ? 'UPI Link Copied!' : 'Copy UPI Link'}</span>
               </button>
               <button

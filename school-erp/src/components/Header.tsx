@@ -31,27 +31,27 @@ export const Header: React.FC<HeaderProps> = ({
   const roleLabels: Record<UserRole, { title: string; color: string; desc: string }> = {
     OWNER: { 
       title: 'School Trustee / Owner', 
-      color: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+      color: 'bg-[#fee2e2] text-[#cc001f] border-[#fecaca]',
       desc: 'Executive P&L, Cashflow, Governance'
     },
     PRINCIPAL: { 
       title: 'Principal / Director', 
-      color: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/30',
+      color: 'bg-[#f6f6f3] text-[#000000] border-[#dadad3]',
       desc: 'Academic Operations & Faculty Oversight'
     },
     ACCOUNTANT: { 
       title: 'Chief Fee Controller', 
-      color: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+      color: 'bg-[#c7f0da] text-[#103c25] border-[#a3e6c2]',
       desc: 'Double-Entry Ledger & WhatsApp Recovery'
     },
     EXAM_HEAD: { 
       title: 'CBSE Exam Cell In-Charge', 
-      color: 'bg-purple-500/10 text-purple-400 border-purple-500/30',
+      color: 'bg-[#f6f6f3] text-[#211922] border-[#dadad3]',
       desc: 'UDISE+, APAAR ID, LOC Validation'
     },
     TRANSPORT_HEAD: { 
       title: 'Transport & Safety Head', 
-      color: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30',
+      color: 'bg-[#f6f6f3] text-[#33332e] border-[#dadad3]',
       desc: 'AIS-140 GPS & RFID Door Taps'
     },
   };

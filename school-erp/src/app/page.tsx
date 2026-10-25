@@ -156,14 +156,14 @@ export default function Home() {
       </main>
 
       {/* Sticky Global System Health Bar */}
-      <footer className="mt-auto border-t border-white/5 py-4 px-4 lg:px-8 bg-slate-950/80 text-xs text-slate-400 no-print">
+      <footer className="mt-auto border-t border-[#dadad3] py-4 px-4 lg:px-8 bg-[#ffffff] text-xs text-[#62625b] no-print">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span className="font-semibold text-white">Vidyoday CBSE ERP Core v2.4</span>
-            <span className="text-slate-600">|</span>
-            <span>NEP 2020 & NCrF Aligned</span>
-            <span className="text-slate-600">|</span>
+            <span className="w-2 h-2 rounded-full bg-[#103c25] animate-pulse"></span>
+            <span className="font-semibold text-[#000000]">Vidyoday CBSE ERP Core v2.4</span>
+            <span className="text-[#dadad3]">|</span>
+            <span>NEP 2020 &amp; NCrF Aligned</span>
+            <span className="text-[#dadad3]">|</span>
             <span>Tally Prime Double-Entry Engine</span>
           </div>
           <div className="flex items-center gap-4 text-[11px] font-mono">

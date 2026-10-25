@@ -50,35 +50,35 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({
       label: 'Fee Ledger & 1-Tap UPI',
       icon: WalletCards,
       badge: defaultersCount > 0 ? `${defaultersCount} Dues` : null,
-      badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+      badgeColor: 'bg-[#fee2e2] text-[#cc001f] border-[#fecaca]',
     },
     {
       id: 'compliance' as ActiveTab,
       label: 'CBSE & Statutory Hub',
       icon: FileCheck2,
       badge: locWarningCount > 0 ? `${locWarningCount} Alert` : null,
-      badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
+      badgeColor: 'bg-[#fee2e2] text-[#cc001f] border-[#fecaca]',
     },
     {
       id: 'nep-hpc' as ActiveTab,
       label: 'NEP 2020 360° HPC',
       icon: Award,
       badge: 'PARAKH AI',
-      badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+      badgeColor: 'bg-[#f6f6f3] text-[#211922] border-[#dadad3]',
     },
     {
       id: 'substitution' as ActiveTab,
       label: '7:30 AM Auto-Substitution',
       icon: Clock,
       badge: absentTeachersCount > 0 ? `${absentTeachersCount} Absent` : null,
-      badgeColor: 'bg-rose-500/20 text-rose-300 border-rose-500/30',
+      badgeColor: 'bg-[#fee2e2] text-[#cc001f] border-[#fecaca]',
     },
     {
       id: 'transport' as ActiveTab,
       label: 'AIS-140 GPS & RFID Safety',
       icon: BusFront,
       badge: 'Live',
-      badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+      badgeColor: 'bg-[#c7f0da] text-[#103c25] border-[#a3e6c2]',
     },
     {
       id: 'architecture' as ActiveTab,
@@ -92,7 +92,7 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({
       label: 'Webhooks & Microservices',
       icon: Server,
       badge: 'Live APIs',
-      badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+      badgeColor: 'bg-[#c7f0da] text-[#103c25] border-[#a3e6c2]',
     },
   ];
 
@@ -120,7 +120,7 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({
                   className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                     isActive
                       ? 'bg-white/20 text-white border-white/30'
-                      : 'bg-white text-[#33332e] border-[#dadad3]'
+                      : tab.badgeColor || 'bg-[#f6f6f3] text-[#33332e] border-[#dadad3]'
                   }`}
                 >
                   {tab.badge}

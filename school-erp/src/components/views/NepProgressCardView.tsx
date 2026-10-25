@@ -47,8 +47,8 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
   const scoreLabels: Record<number, { text: string; color: string }> = {
     1: { text: 'Beginning (L1)', color: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
     2: { text: 'Progressing (L2)', color: 'text-blue-400 bg-blue-500/10 border-blue-500/30' },
-    3: { text: 'Proficient (L3)', color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/30' },
-    4: { text: 'Exemplary (L4)', color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
+    3: { text: 'Proficient (L3)', color: 'text-[#e60023] bg-indigo-500/10 border-indigo-500/30' },
+    4: { text: 'Exemplary (L4)', color: 'text-[#103c25] bg-emerald-500/10 border-emerald-500/30' },
   };
 
   const handleSimulateVoiceRecording = () => {
@@ -103,7 +103,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
             <Award className="w-6 h-6 text-purple-400" />
             NEP 2020 360° Holistic Progress Card (HPC) Studio
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#62625b]">
             CBSE PARAKH-aligned multi-stakeholder assessment: Teacher Rubrics, AI Voice-to-Rubric, Peer Reviews, and Parent Reflections.
           </p>
         </div>
@@ -128,7 +128,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
           <button
             id="print-hpc-btn"
             onClick={() => window.print()}
-            className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-all flex items-center gap-1.5 border border-white/10"
+            className="px-3.5 py-2 rounded-xl bg-[#e5e5e0] hover:bg-[#c8c8c1] text-[#211922] text-xs font-bold transition-all flex items-center gap-1.5 border border-[#dadad3]"
           >
             <Printer className="w-4 h-4" />
             <span>Print Official HPC</span>
@@ -150,7 +150,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
       )}
 
       {/* Student Banner Card */}
-      <div className="glass-card rounded-2xl p-5 border border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="glass-card rounded-2xl p-5 border border-[#dadad3] flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white font-black text-xl shadow-lg ring-2 ring-purple-400/30">
             AS
@@ -162,20 +162,20 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
                 APAAR: {hpcData.apaarId}
               </span>
             </div>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[#62625b]">
               {hpcData.className} • Admission #{hpcData.admissionNo} • Academic Year {hpcData.academicYear}
             </p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 font-mono text-xs">
-          <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5">
-            <span className="text-slate-400 block text-[10px]">NCrF Notional Hours</span>
-            <span className="text-emerald-400 font-bold">{hpcData.notionalLearningHours} / 1200 hrs</span>
+          <div className="p-2.5 rounded-xl bg-[#f6f6f3] border border-[#dadad3]">
+            <span className="text-[#62625b] block text-[10px]">NCrF Notional Hours</span>
+            <span className="text-[#103c25] font-bold">{hpcData.notionalLearningHours} / 1200 hrs</span>
           </div>
-          <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5">
-            <span className="text-slate-400 block text-[10px]">PARAKH Credit Points</span>
-            <span className="text-indigo-400 font-bold">{hpcData.parakhCreditPoints} Points</span>
+          <div className="p-2.5 rounded-xl bg-[#f6f6f3] border border-[#dadad3]">
+            <span className="text-[#62625b] block text-[10px]">PARAKH Credit Points</span>
+            <span className="text-[#e60023] font-bold">{hpcData.parakhCreditPoints} Points</span>
           </div>
         </div>
       </div>
@@ -193,7 +193,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
             const scoreInfo = scoreLabels[domain.score] || scoreLabels[3];
 
             return (
-              <div key={domain.domainName} className="glass-card rounded-2xl p-5 border border-white/5">
+              <div key={domain.domainName} className="glass-card rounded-2xl p-5 border border-[#dadad3]">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                   <div className="flex items-center gap-3">
                     <div className="p-2.5 rounded-xl bg-purple-500/20 text-purple-300">
@@ -201,7 +201,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
                     </div>
                     <div>
                       <h4 className="text-sm font-bold text-white">{domain.domainName}</h4>
-                      <p className="text-[11px] text-slate-400">Continuous observation rubrics & competency milestones</p>
+                      <p className="text-[11px] text-[#62625b]">Continuous observation rubrics & competency milestones</p>
                     </div>
                   </div>
 
@@ -215,7 +215,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
                         className={`px-2.5 py-1 rounded-lg text-xs font-bold transition-all ${
                           domain.score === level
                             ? 'bg-purple-600 text-white shadow ring-1 ring-purple-400'
-                            : 'bg-slate-800 text-slate-400 hover:text-white'
+                            : 'bg-[#e5e5e0] text-[#62625b] hover:text-[#000000]'
                         }`}
                       >
                         L{level}
@@ -228,20 +228,20 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
                 </div>
 
                 {/* Descriptors */}
-                <div className="space-y-1.5 mb-3 bg-slate-900/60 p-3 rounded-xl border border-white/5">
-                  <span className="text-[10px] uppercase font-mono text-slate-400 block mb-1">
+                <div className="space-y-1.5 mb-3 bg-[#f6f6f3]/60 p-3 rounded-xl border border-[#dadad3]">
+                  <span className="text-[10px] uppercase font-mono text-[#62625b] block mb-1">
                     Observed Competency Indicators:
                   </span>
                   {domain.descriptors.map((desc, dIdx) => (
-                    <div key={dIdx} className="text-xs text-slate-300 flex items-start gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <div key={dIdx} className="text-xs text-[#33332e] flex items-start gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#103c25] shrink-0 mt-0.5" />
                       <span>{desc}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Teacher Qualitative Note */}
-                <div className="text-xs text-slate-400 bg-purple-950/20 p-2.5 rounded-xl border border-purple-500/20">
+                <div className="text-xs text-[#62625b] bg-purple-950/20 p-2.5 rounded-xl border border-purple-500/20">
                   <strong className="text-purple-300">Teacher Narrative: </strong>
                   {domain.teacherNotes}
                 </div>
@@ -255,47 +255,47 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         
         {/* Peer Assessment */}
-        <div className="glass-card rounded-2xl p-5 border border-white/5">
+        <div className="glass-card rounded-2xl p-5 border border-[#dadad3]">
           <div className="flex items-center gap-2 mb-3">
             <User className="w-4 h-4 text-cyan-400" />
             <h4 className="text-xs font-bold text-white">Peer Reflection (Sahapathi)</h4>
           </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 border border-white/5 space-y-2 text-xs">
+          <div className="p-3 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-2 text-xs">
             <div className="text-[11px] text-cyan-300 font-semibold">{hpcData.peerReview.peerName}</div>
-            <p className="text-slate-300 italic text-[11px]">"{hpcData.peerReview.comment}"</p>
-            <div className="text-[10px] text-emerald-400 font-mono">Verdict: {hpcData.peerReview.rating}</div>
+            <p className="text-[#33332e] italic text-[11px]">"{hpcData.peerReview.comment}"</p>
+            <div className="text-[10px] text-[#103c25] font-mono">Verdict: {hpcData.peerReview.rating}</div>
           </div>
         </div>
 
         {/* Parent Reflection */}
-        <div className="glass-card rounded-2xl p-5 border border-white/5">
+        <div className="glass-card rounded-2xl p-5 border border-[#dadad3]">
           <div className="flex items-center gap-2 mb-3">
             <Heart className="w-4 h-4 text-rose-400" />
             <h4 className="text-xs font-bold text-white">Parent Reflection (Abhibhavak)</h4>
           </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 border border-white/5 space-y-2 text-xs">
-            <p className="text-slate-300 text-[11px]">"{hpcData.parentReflection.parentNotes}"</p>
-            <div className="text-[10px] text-slate-400">
+          <div className="p-3 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-2 text-xs">
+            <p className="text-[#33332e] text-[11px]">"{hpcData.parentReflection.parentNotes}"</p>
+            <div className="text-[10px] text-[#62625b]">
               Strengths: <span className="text-rose-300">{hpcData.parentReflection.strengthsObservedAtHome}</span>
             </div>
-            <div className="text-[10px] text-slate-500 font-mono">Signed on: {hpcData.parentReflection.signatureDate}</div>
+            <div className="text-[10px] text-[#91918c] font-mono">Signed on: {hpcData.parentReflection.signatureDate}</div>
           </div>
         </div>
 
         {/* Student Self-Evaluation */}
-        <div className="glass-card rounded-2xl p-5 border border-white/5">
+        <div className="glass-card rounded-2xl p-5 border border-[#dadad3]">
           <div className="flex items-center gap-2 mb-3">
             <Brain className="w-4 h-4 text-amber-400" />
             <h4 className="text-xs font-bold text-white">Student Self-Reflection (Swam-Mulyankan)</h4>
           </div>
-          <div className="p-3 rounded-xl bg-slate-900/80 border border-white/5 space-y-1.5 text-xs">
+          <div className="p-3 rounded-xl bg-[#f6f6f3] border border-[#dadad3] space-y-1.5 text-xs">
             <div className="text-[11px]">
-              <span className="text-slate-400 block text-[10px]">What I am proud of:</span>
+              <span className="text-[#62625b] block text-[10px]">What I am proud of:</span>
               <span className="text-amber-300 font-medium">"{hpcData.studentSelfEvaluation.iAmProudOf}"</span>
             </div>
             <div className="text-[11px]">
-              <span className="text-slate-400 block text-[10px]">What I want to improve:</span>
-              <span className="text-slate-300">"{hpcData.studentSelfEvaluation.iWantToImprove}"</span>
+              <span className="text-[#62625b] block text-[10px]">What I want to improve:</span>
+              <span className="text-[#33332e]">"{hpcData.studentSelfEvaluation.iWantToImprove}"</span>
             </div>
           </div>
         </div>
@@ -309,7 +309,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
             <h2 className="text-lg font-black uppercase text-indigo-900 tracking-wider">
               {campus.name}
             </h2>
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-[#dadad3]">
               CBSE Affiliation No: {campus.affiliationNumber} | UDISE+ Code: {campus.udiseSchoolCode}
             </p>
             <p className="text-xs font-bold text-indigo-700 mt-1">
@@ -318,7 +318,7 @@ export const NepProgressCardView: React.FC<NepProgressCardViewProps> = ({
           </div>
           <div className="text-right">
             <div className="text-xs font-mono font-bold text-slate-700">APAAR ID: {hpcData.apaarId}</div>
-            <div className="text-[10px] text-slate-500">Academic Year: {hpcData.academicYear}</div>
+            <div className="text-[10px] text-[#91918c]">Academic Year: {hpcData.academicYear}</div>
             <div className="text-[10px] text-emerald-700 font-bold">NCrF Verified • 40 Credits</div>
           </div>
         </div>

@@ -85,7 +85,7 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
             <Clock className="w-6 h-6 text-rose-400" />
             7:30 AM Zero-Chaos Morning Substitution Engine
           </h2>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[#62625b]">
             Connected to facial recognition / biometric hardware. Solves morning teacher absences before first bell at 08:00 AM.
           </p>
         </div>
@@ -102,15 +102,15 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
 
       {/* Solver Alert */}
       {solverRun && (
-        <div className="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-200 text-xs font-semibold flex items-center justify-between animate-fade-in shadow-lg">
+        <div className="p-4 rounded-xl bg-[#c7f0da] border border-[#a3e6c2] text-[#103c25] text-xs font-semibold flex items-center justify-between animate-fade-in shadow-lg">
           <div className="flex items-center gap-2.5">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
+            <CheckCircle2 className="w-5 h-5 text-[#103c25] shrink-0" />
             <div>
               <strong>100% Morning Coverage Achieved:</strong> All 4 vacant periods automatically matched with qualified teachers based on weekly substitution caps. 
               Classroom smartboards & faculty mobile apps notified!
             </div>
           </div>
-          <span className="text-[10px] font-mono uppercase bg-emerald-500/30 px-2 py-0.5 rounded whitespace-nowrap">
+          <span className="text-[10px] font-mono uppercase bg-[#c7f0da] px-2 py-0.5 rounded whitespace-nowrap">
             Zero Unsupervised Classes
           </span>
         </div>
@@ -120,13 +120,13 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Left Column: Biometric Punch Telemetry */}
-        <div className="glass-card rounded-2xl p-5 border border-white/5 space-y-4">
+        <div className="glass-card rounded-2xl p-5 border border-[#dadad3] space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              <UserCheck className="w-4 h-4 text-emerald-400" />
+              <UserCheck className="w-4 h-4 text-[#103c25]" />
               Biometric Punch Status (07:45 AM)
             </h3>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#e5e5e0] text-[#33332e]">
               Cut-off 07:45 AM
             </span>
           </div>
@@ -140,15 +140,15 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
                     ? 'bg-rose-950/30 border-rose-500/40'
                     : teacher.status === 'APPROVED_LEAVE'
                     ? 'bg-amber-950/30 border-amber-500/40'
-                    : 'bg-slate-900/60 border-white/5'
+                    : 'bg-[#f6f6f3]/60 border-[#dadad3]'
                 }`}
               >
                 <div>
                   <div className="font-bold text-white flex items-center gap-1.5">
                     {teacher.teacherName}
-                    <span className="text-[10px] text-slate-400 font-mono">({teacher.teacherId})</span>
+                    <span className="text-[10px] text-[#62625b] font-mono">({teacher.teacherId})</span>
                   </div>
-                  <div className="text-[11px] text-slate-400">
+                  <div className="text-[11px] text-[#62625b]">
                     {teacher.subjectSpecialization.join(', ')} • {teacher.assignedClassToday}
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
                   <span
                     className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                       teacher.status === 'PRESENT'
-                        ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                        ? 'bg-emerald-500/10 text-[#103c25] border-emerald-500/20'
                         : teacher.status === 'UNANNOUNCED_ABSENT'
                         ? 'bg-rose-500/20 text-rose-300 border-rose-500/30 animate-pulse'
                         : 'bg-amber-500/10 text-amber-300 border-amber-500/20'
@@ -165,7 +165,7 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
                   >
                     {teacher.status.replace('_', ' ')}
                   </span>
-                  <div className="text-[10px] text-slate-500 font-mono mt-0.5">
+                  <div className="text-[10px] text-[#91918c] font-mono mt-0.5">
                     {teacher.checkInTime || 'No Punch Log'}
                   </div>
                 </div>
@@ -173,20 +173,20 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
             ))}
           </div>
 
-          <div className="p-3 rounded-xl bg-slate-900 border border-white/5 text-[11px] text-slate-400">
-            <strong className="text-slate-200">Burnout Protection Rule:</strong> Max 3 substitutions per week. Teachers with 0 substitutions are prioritized first.
+          <div className="p-3 rounded-xl bg-[#f6f6f3] border border-[#dadad3] text-[11px] text-[#62625b]">
+            <strong className="text-[#211922]">Burnout Protection Rule:</strong> Max 3 substitutions per week. Teachers with 0 substitutions are prioritized first.
           </div>
         </div>
 
         {/* Right 2 Columns: Vacant Period Matrix */}
-        <div className="lg:col-span-2 glass-card rounded-2xl p-5 border border-white/5">
+        <div className="lg:col-span-2 glass-card rounded-2xl p-5 border border-[#dadad3]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
             <div>
               <h3 className="text-sm font-bold text-white flex items-center gap-2">
                 <Clock className="w-4 h-4 text-amber-400" />
                 Vacant Period Allocation & Smartboard Broadcast Matrix
               </h3>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-[#62625b]">
                 Periods requiring teacher coverage due to morning absences.
               </p>
             </div>
@@ -199,22 +199,22 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
             {periods.map((period) => (
               <div
                 key={period.periodNumber}
-                className="p-4 rounded-xl bg-slate-900/80 border border-white/5 hover:border-indigo-500/30 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
+                className="p-4 rounded-xl bg-[#f6f6f3] border border-[#dadad3] hover:border-indigo-500/30 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
               >
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-mono font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">
+                    <span className="font-mono font-bold text-[#e60023] bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">
                       Period {period.periodNumber}
                     </span>
-                    <span className="text-slate-400 text-[11px] font-mono">{period.timeSlot}</span>
+                    <span className="text-[#62625b] text-[11px] font-mono">{period.timeSlot}</span>
                     <span className="font-bold text-white">
                       {period.className}-{period.section}
                     </span>
                   </div>
                   
                   <div className="mt-1.5 flex items-center gap-3">
-                    <span className="text-slate-300 font-semibold">{period.subject}</span>
-                    <span className="text-slate-500">|</span>
+                    <span className="text-[#33332e] font-semibold">{period.subject}</span>
+                    <span className="text-[#91918c]">|</span>
                     <span className="text-rose-400 line-through">Default: {period.defaultTeacherName}</span>
                   </div>
                 </div>
@@ -224,16 +224,16 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
                   {period.substituteTeacherId ? (
                     <div className="flex items-center gap-2">
                       <div className="text-right">
-                        <div className="font-bold text-emerald-400 flex items-center gap-1">
+                        <div className="font-bold text-[#103c25] flex items-center gap-1">
                           <CheckCircle2 className="w-3.5 h-3.5" />
                           <span>{period.substituteTeacherName}</span>
                         </div>
-                        <div className="text-[10px] text-slate-400">Classroom Smartboard Active</div>
+                        <div className="text-[10px] text-[#62625b]">Classroom Smartboard Active</div>
                       </div>
                       <button
                         id={`smartboard-btn-${period.periodNumber}`}
                         onClick={() => setSmartboardPreviewPeriod(period)}
-                        className="p-2 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-300 border border-indigo-500/30"
+                        className="p-2 rounded-lg bg-[#e60023]/30 hover:bg-[#e60023]/50 text-indigo-300 border border-indigo-500/30"
                         title="Preview Classroom Smartboard Screen"
                       >
                         <Monitor className="w-4 h-4" />
@@ -259,16 +259,16 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="glass-card rounded-3xl max-w-2xl w-full p-6 border-2 border-indigo-500/40 shadow-2xl space-y-4">
             
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
+            <div className="flex items-center justify-between pb-3 border-b border-[#dadad3]">
               <div className="flex items-center gap-2">
-                <Monitor className="w-5 h-5 text-indigo-400" />
+                <Monitor className="w-5 h-5 text-[#e60023]" />
                 <h4 className="text-sm font-bold text-white">
                   Classroom Smartboard Digital Notice (Live Room Display)
                 </h4>
               </div>
               <button
                 onClick={() => setSmartboardPreviewPeriod(null)}
-                className="text-slate-400 hover:text-white"
+                className="text-[#62625b] hover:text-[#000000]"
               >
                 ✕
               </button>
@@ -276,7 +276,7 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
 
             {/* Smartboard Screen Simulation */}
             <div className="p-8 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 border border-indigo-500/30 text-center space-y-4 shadow-inner">
-              <span className="text-xs uppercase font-mono tracking-widest text-indigo-400 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#e60023] px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
                 Delhi Public Academy • Smart Classroom 8-A
               </span>
 
@@ -284,18 +284,18 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
                 Period {smartboardPreviewPeriod.periodNumber}: {smartboardPreviewPeriod.subject}
               </h2>
 
-              <div className="p-4 rounded-xl bg-white/5 max-w-md mx-auto border border-white/10 space-y-1">
-                <div className="text-xs text-slate-400">Assigned Substitute Faculty:</div>
-                <div className="text-lg font-bold text-emerald-400">
+              <div className="p-4 rounded-xl bg-[#f6f6f3] max-w-md mx-auto border border-[#dadad3] space-y-1">
+                <div className="text-xs text-[#62625b]">Assigned Substitute Faculty:</div>
+                <div className="text-lg font-bold text-[#103c25]">
                   {smartboardPreviewPeriod.substituteTeacherName}
                 </div>
-                <div className="text-xs text-slate-300">
+                <div className="text-xs text-[#33332e]">
                   Instructions: Please open NCERT Chapter 6 Practice Exercise on your tablets.
                 </div>
               </div>
 
-              <div className="text-[11px] text-slate-400 font-mono flex items-center justify-center gap-2">
-                <Smartphone className="w-3.5 h-3.5 text-indigo-400" />
+              <div className="text-[11px] text-[#62625b] font-mono flex items-center justify-center gap-2">
+                <Smartphone className="w-3.5 h-3.5 text-[#e60023]" />
                 <span>Substitute Faculty Notified on WhatsApp & Vidyoday Mobile App (07:46 AM)</span>
               </div>
             </div>
@@ -303,7 +303,7 @@ export const SubstitutionView: React.FC<SubstitutionViewProps> = ({
             <div className="text-right">
               <button
                 onClick={() => setSmartboardPreviewPeriod(null)}
-                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold"
+                className="px-4 py-2 rounded-xl bg-[#e5e5e0] hover:bg-[#c8c8c1] text-[#211922] text-xs font-semibold"
               >
                 Dismiss Preview
               </button>
