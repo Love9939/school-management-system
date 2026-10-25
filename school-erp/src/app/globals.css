@@ -1,110 +1,179 @@
 @import "tailwindcss";
 
 :root {
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-card: rgba(17, 24, 39, 0.75);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-highlight: rgba(99, 102, 241, 0.35);
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --brand-primary: #6366f1;
-  --brand-secondary: #8b5cf6;
-  --brand-emerald: #10b981;
-  --brand-amber: #f59e0b;
-  --brand-rose: #f43f5e;
-  --brand-cyan: #06b6d4;
+  --canvas: #ffffff;
+  --surface-soft: #fbfbf9;
+  --surface-card: #f6f6f3;
+  --surface-elevated: #ffffff;
+  --surface-dark: #262622;
+  --secondary-bg: #e5e5e0;
+  --secondary-pressed: #c8c8c1;
+  --hairline: #dadad3;
+  --hairline-soft: #e5e5e0;
+  --primary: #e60023;
+  --primary-pressed: #cc001f;
+  --ink: #000000;
+  --ink-soft: #211922;
+  --body: #33332e;
+  --charcoal: #262622;
+  --mute: #62625b;
+  --ash: #91918c;
+  --stone: #c8c8c1;
+  --success-deep: #103c25;
+  --success-pale: #c7f0da;
+  --error: #9e0a0a;
+  --error-deep: #cc001f;
+  --focus-outer: #435ee5;
+  --focus-inner: #ffffff;
+
+  /* Legacy aliases mapped to DESIGN.md palette */
+  --bg-primary: #fbfbf9;
+  --bg-secondary: #f6f6f3;
+  --bg-card: #ffffff;
+  --border-subtle: #dadad3;
+  --border-highlight: #e60023;
+  --text-main: #000000;
+  --text-muted: #62625b;
+  --brand-primary: #e60023;
+  --brand-secondary: #cc001f;
+  --brand-emerald: #103c25;
+  --brand-amber: #b45309;
+  --brand-rose: #e60023;
+  --brand-cyan: #0284c7;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-card: var(--surface-card);
+  --color-primary: var(--primary);
+  --color-primary-pressed: var(--primary-pressed);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-mute: var(--mute);
+  --color-hairline: var(--hairline);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-main);
-  font-family: var(--font-sans);
-  background-image: 
-    radial-gradient(at 10% 15%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
-    radial-gradient(at 90% 85%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(139, 92, 246, 0.05) 0px, transparent 65%);
-  background-attachment: fixed;
+  background-color: var(--surface-soft);
+  color: var(--body);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glassmorphism Styles */
+/* Pinterest warm-cream scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fbfbf9;
+}
+::-webkit-scrollbar-thumb {
+  background: #dadad3;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c8c8c1;
+}
+
+/* Card and Surface Mappings based on DESIGN.md */
 .glass-card {
-  background: rgba(17, 24, 39, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background: #ffffff;
+  color: #33332e;
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
 }
 
 .glass-card-hover {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease-in-out;
 }
 .glass-card-hover:hover {
-  transform: translateY(-2px);
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.15);
+  border-color: #000000;
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.08);
 }
 
 .glass-pill {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: rgba(11, 15, 25, 0.8);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.5);
+/* Harmonize text and border contrast inside light glass-cards */
+.glass-card h1, 
+.glass-card h2, 
+.glass-card h3, 
+.glass-card h4, 
+.glass-card .text-white:not(button *):not(button):not(.badge-white):not([class*="bg-rose"]):not([class*="bg-emerald"]):not([class*="bg-indigo"]):not([class*="bg-gradient"]) {
+  color: #000000;
 }
 
-/* Badge Glows */
-.glow-emerald {
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
-}
-.glow-indigo {
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
-}
-.glow-rose {
-  box-shadow: 0 0 15px rgba(244, 63, 94, 0.35);
-}
-.glow-amber {
-  box-shadow: 0 0 15px rgba(245, 158, 11, 0.35);
+.glass-card .text-slate-400, 
+.glass-card .text-slate-500 {
+  color: #62625b;
 }
 
-/* Print Styling for CBSE Report Cards & Fee Invoices */
+.glass-card .text-slate-200, 
+.glass-card .text-slate-300 {
+  color: #211922;
+}
+
+.glass-card .border-white\/5,
+.glass-card .border-white\/10,
+.glass-card .border-white\/15,
+.glass-card .border-white\/20 {
+  border-color: #dadad3;
+}
+
+.glass-card .bg-slate-800,
+.glass-card .bg-slate-900,
+.glass-card .bg-slate-900\/60,
+.glass-card .bg-slate-900\/80 {
+  background-color: #f6f6f3;
+  border-color: #dadad3;
+}
+
+/* Button variants based on DESIGN.md */
+.btn-primary-red {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 16px;
+  transition: background-color 0.15s ease-in-out;
+}
+.btn-primary-red:hover {
+  background-color: var(--primary-pressed);
+}
+
+.btn-secondary-cream {
+  background-color: var(--secondary-bg);
+  color: var(--ink);
+  font-weight: 700;
+  border-radius: 16px;
+  transition: background-color 0.15s ease-in-out;
+}
+.btn-secondary-cream:hover {
+  background-color: var(--secondary-pressed);
+}
+
+.pin-modal {
+  background-color: var(--canvas);
+  border-radius: 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
 @media print {
   body {
     background: #ffffff !important;
-    color: #111827 !important;
+    color: #000000 !important;
   }
   .no-print {
     display: none !important;
-  }
-  .print-only {
-    display: block !important;
-  }
-  .glass-card {
-    background: #ffffff !important;
-    border: 1px solid #d1d5db !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-  }
-  .page-break {
-    page-break-after: always;
   }
 }

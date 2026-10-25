@@ -69,7 +69,7 @@ export default function Home() {
   const locWarningCount = candidates.filter((c) => !c.locReady).length;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0b0f19] text-slate-100">
+    <div className="min-h-screen flex flex-col bg-[#fbfbf9] text-[#33332e]">
       
       {/* Top Application Header */}
       <Header

@@ -57,30 +57,30 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="glass-card border-b border-white/10 px-4 lg:px-8 py-3.5 no-print">
+    <header className="bg-white border-b border-[#dadad3] px-4 lg:px-8 py-3.5 no-print shadow-xs">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
         
         {/* Brand & School Identity */}
         <div className="flex items-center gap-3.5">
-          <div className="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 ring-2 ring-indigo-400/20">
-            <School className="w-6 h-6 text-white" />
+          <div className="w-11 h-11 rounded-2xl bg-[#fee2e2] flex items-center justify-center text-[#e60023] shadow-sm">
+            <School className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+              <h1 className="text-base font-bold tracking-tight text-[#000000] flex items-center gap-2">
                 {campus.name}
-                <span className="text-[10px] uppercase font-semibold px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-[#f6f6f3] text-[#33332e] border border-[#dadad3]">
                   CBSE Affil #{campus.affiliationNumber}
                 </span>
               </h1>
             </div>
-            <p className="text-xs text-slate-400 flex items-center gap-2">
-              <span>UDISE+ Code: <strong className="text-slate-300 font-mono">{campus.udiseSchoolCode}</strong></span>
-              <span>•</span>
-              <span>Academic Year: <strong className="text-indigo-400">{campus.academicYear}</strong></span>
-              <span>•</span>
-              <span className="text-emerald-400 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <p className="text-xs text-[#62625b] flex items-center gap-2 mt-0.5">
+              <span>UDISE+ Code: <strong className="text-[#000000] font-mono">{campus.udiseSchoolCode}</strong></span>
+              <span className="text-[#dadad3]">•</span>
+              <span>Academic Year: <strong className="text-[#e60023]">{campus.academicYear}</strong></span>
+              <span className="text-[#dadad3]">•</span>
+              <span className="text-[#103c25] font-semibold flex items-center gap-1 bg-[#c7f0da] px-2 py-0.5 rounded-full text-[11px]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#103c25] animate-pulse"></span>
                 Govt Sync Online
               </span>
             </p>
@@ -91,19 +91,19 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center flex-wrap gap-2.5">
           
           {/* Hardware Heartbeat Pills */}
-          <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 text-xs">
-            <div className="flex items-center gap-1.5 text-slate-300" title="AIS-140 GPS Device Gateway">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <div className="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#f6f6f3] border border-[#dadad3] text-xs text-[#33332e]">
+            <div className="flex items-center gap-1.5 font-medium" title="AIS-140 GPS Device Gateway">
+              <span className="w-2 h-2 rounded-full bg-[#103c25]"></span>
               <span className="text-[11px] font-mono">AIS-140: 14/14</span>
             </div>
-            <span className="text-slate-600">|</span>
-            <div className="flex items-center gap-1.5 text-slate-300" title="Biometric Attendance Gateway">
-              <UserCheck className="w-3.5 h-3.5 text-indigo-400" />
+            <span className="text-[#dadad3]">|</span>
+            <div className="flex items-center gap-1.5 font-medium" title="Biometric Attendance Gateway">
+              <UserCheck className="w-3.5 h-3.5 text-[#e60023]" />
               <span className="text-[11px] font-mono">Biometric: 7:45 AM</span>
             </div>
-            <span className="text-slate-600">|</span>
-            <div className="flex items-center gap-1.5 text-slate-300" title="Tally Prime Direct Sync">
-              <FileSpreadsheet className="w-3.5 h-3.5 text-amber-400" />
+            <span className="text-[#dadad3]">|</span>
+            <div className="flex items-center gap-1.5 font-medium" title="Tally Prime Direct Sync">
+              <FileSpreadsheet className="w-3.5 h-3.5 text-[#103c25]" />
               <span className="text-[11px] font-mono">Tally: Live</span>
             </div>
           </div>
@@ -112,31 +112,31 @@ export const Header: React.FC<HeaderProps> = ({
           <button 
             id="quick-morning-sim-btn"
             onClick={onQuickSimulate}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-xs font-semibold hover:from-indigo-500 hover:to-violet-500 transition-all shadow-md shadow-indigo-500/20 active:scale-95"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-[#e60023] hover:bg-[#cc001f] text-white text-xs font-bold transition-all shadow-sm cursor-pointer"
             title="Simulate 7:30 AM Morning Trigger"
           >
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+            <Sparkles className="w-3.5 h-3.5 text-white" />
             <span>Morning 7:30 AM Sim</span>
           </button>
 
           {/* Role Switcher */}
           <div className="relative group">
-            <div className="flex items-center gap-2 pl-3 pr-2 py-1.5 rounded-lg bg-slate-900/80 border border-white/10 text-xs">
-              <span className="text-slate-400 font-medium">Viewing as:</span>
+            <div className="flex items-center gap-2 pl-3.5 pr-2.5 py-1.5 rounded-2xl bg-[#f6f6f3] border border-[#dadad3] text-xs text-[#33332e]">
+              <span className="text-[#62625b] font-medium">Viewing as:</span>
               <div className="relative">
                 <select
                   id="user-role-select"
                   value={currentRole}
                   onChange={(e) => onRoleChange(e.target.value as UserRole)}
-                  className="appearance-none bg-transparent pr-6 text-xs font-bold text-indigo-300 focus:outline-none cursor-pointer"
+                  className="appearance-none bg-transparent pr-6 text-xs font-bold text-[#000000] focus:outline-none cursor-pointer"
                 >
-                  <option value="OWNER" className="bg-slate-900 text-white">👑 School Trustee / Owner</option>
-                  <option value="PRINCIPAL" className="bg-slate-900 text-white">🎓 Principal / Academic Director</option>
-                  <option value="ACCOUNTANT" className="bg-slate-900 text-white">💰 Head of Accounts & Fees</option>
-                  <option value="EXAM_HEAD" className="bg-slate-900 text-white">📋 CBSE Exam Cell & LOC</option>
-                  <option value="TRANSPORT_HEAD" className="bg-slate-900 text-white">🚌 Transport & Safety Head</option>
+                  <option value="OWNER" className="bg-white text-black">👑 School Trustee / Owner</option>
+                  <option value="PRINCIPAL" className="bg-white text-black">🎓 Principal / Academic Director</option>
+                  <option value="ACCOUNTANT" className="bg-white text-black">💰 Head of Accounts &amp; Fees</option>
+                  <option value="EXAM_HEAD" className="bg-white text-black">📋 CBSE Exam Cell &amp; LOC</option>
+                  <option value="TRANSPORT_HEAD" className="bg-white text-black">🚌 Transport &amp; Safety Head</option>
                 </select>
-                <ChevronDown className="w-3.5 h-3.5 text-slate-400 absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDown className="w-3.5 h-3.5 text-[#62625b] absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
           </div>
