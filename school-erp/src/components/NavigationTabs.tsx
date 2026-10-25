@@ -8,7 +8,8 @@ import {
   Award, 
   Clock, 
   BusFront, 
-  Database
+  Database,
+  Server
 } from 'lucide-react';
 
 export type ActiveTab = 
@@ -18,7 +19,8 @@ export type ActiveTab =
   | 'nep-hpc' 
   | 'substitution' 
   | 'transport' 
-  | 'architecture';
+  | 'architecture'
+  | 'api';
 
 interface NavigationTabsProps {
   activeTab: ActiveTab;
@@ -84,6 +86,13 @@ export const NavigationTabs: React.FC<NavigationTabsProps> = ({
       icon: Database,
       badge: null,
       badgeColor: null,
+    },
+    {
+      id: 'api' as ActiveTab,
+      label: 'Webhooks & Microservices',
+      icon: Server,
+      badge: 'Live APIs',
+      badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
     },
   ];
 

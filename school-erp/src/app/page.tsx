@@ -10,6 +10,7 @@ import { NepProgressCardView } from '../components/views/NepProgressCardView';
 import { SubstitutionView } from '../components/views/SubstitutionView';
 import { TransportSafetyView } from '../components/views/TransportSafetyView';
 import { DatabaseSchemaView } from '../components/views/DatabaseSchemaView';
+import { ApiMicroservicesView } from '../components/views/ApiMicroservicesView';
 
 import { 
   CURRENT_CAMPUS, 
@@ -146,6 +147,10 @@ export default function Home() {
 
         {activeTab === 'architecture' && (
           <DatabaseSchemaView />
+        )}
+
+        {activeTab === 'api' && (
+          <ApiMicroservicesView />
         )}
 
       </main>
